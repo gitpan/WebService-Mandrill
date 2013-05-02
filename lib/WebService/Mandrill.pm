@@ -1,20 +1,14 @@
 package WebService::Mandrill;
 
 use 5.010;
-use Any::Moose;
+use Mouse;
+
+# ABSTRACT: WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
+
+our $VERSION = '0.3'; # VERSION
+
 with 'Web::API';
 
-=head1 NAME
-
-WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
-
-=head1 VERSION
-
-Version 0.2.2
-
-=cut
-
-our $VERSION = '0.2';
 
 has 'commands' => (
     is      => 'rw',
@@ -110,6 +104,41 @@ has 'commands' => (
     },
 );
 
+
+sub commands {
+    my ($self) = @_;
+    return $self->commands;
+}
+
+
+sub BUILD {
+    my ($self) = @_;
+
+    $self->user_agent(__PACKAGE__ . ' ' . $VERSION);
+    $self->content_type('application/json');
+    $self->default_method('POST');
+    $self->extension('json');
+    $self->base_url('https://mandrillapp.com/api/1.0');
+    $self->auth_type('hash_key');
+
+    return $self;
+}
+
+
+1;    # End of WebService::Mandrill
+
+__END__
+
+=pod
+
+=head1 NAME
+
+WebService::Mandrill - WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
+
+=head1 VERSION
+
+version 0.3
+
 =head1 SYNOPSIS
 
 Please refer to the API documentation at L<http://mandrillapp.com/api/docs/index.html>
@@ -196,41 +225,13 @@ Please refer to the API documentation at L<http://mandrillapp.com/api/docs/index
 
 =head1 INTERNALS
 
-=cut
-
-sub commands {
-    my ($self) = @_;
-    return $self->commands;
-}
-
 =head2 BUILD
 
 basic configuration for the client API happens usually in the BUILD method when using Web::API
 
-=cut
-
-sub BUILD {
-    my ($self) = @_;
-
-    $self->user_agent(__PACKAGE__ . ' ' . $VERSION);
-    $self->content_type('application/json');
-    $self->default_method('POST');
-    $self->extension('json');
-    $self->base_url('https://mandrillapp.com/api/1.0');
-    $self->auth_type('hash_key');
-
-    return $self;
-}
-
-=head1 AUTHOR
-
-Tobias Kirschstein, C<< <lev at cpan.org> >>
-
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-webservice-mandrill at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WebService-Mandrill>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
+Please report any bugs or feature requests on GitHub's issue tracker L<https://github.com/nupfel/WebService-Mandrill/issues>.
 
 =head1 SUPPORT
 
@@ -242,35 +243,34 @@ You can also look for information at:
 
 =over 4
 
-=item * RT: CPAN's request tracker (report bugs here)
+=item * GitHub repository
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=WebService-Mandrill>
+L<https://github.com/nupfel/WebService-Mandrill>
+
+=item * MetaCPAN
+
+L<https://metacpan.org/module/WebService::Mandrill>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/WebService-Mandrill>
+L<http://annocpan.org/dist/WebService::Mandrill>
 
 =item * CPAN Ratings
 
-L<http://cpanratings.perl.org/d/WebService-Mandrill>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/WebService-Mandrill/>
+L<http://cpanratings.perl.org/d/WebService::Mandrill>
 
 =back
 
-=head1 LICENSE AND COPYRIGHT
+=head1 AUTHOR
 
-Copyright 2013 Tobias Kirschstein.
+Tobias Kirschstein <lev@cpan.org>
 
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
+=head1 COPYRIGHT AND LICENSE
 
-See http://dev.perl.org/licenses/ for more information.
+This software is Copyright (c) 2013 by Tobias Kirschstein.
 
+This is free software, licensed under:
+
+  The (three-clause) BSD License
 
 =cut
-
-1;    # End of WebService::Mandrill

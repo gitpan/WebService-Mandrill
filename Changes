@@ -1,7 +1,59 @@
-Revision history for WebService-Mandrill
+==================================================
+Changes from 2012-05-02 00:00:00 +0000 to present.
+==================================================
 
-0.2     2013-02-28T15:13:25
-        fixed use of wrapper_key -> wrapper
+----------------------------------------
+version 0.3 at 2013-05-02 16:59:44 +0000
+----------------------------------------
 
-0.1     2013-01-07T02:26:34
-        First version, released on an unsuspecting world.
+  Change: a67a64065ba255cdb2155145574d0d689b68d186
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-05-03 04:54:16 +0000
+
+    migrated to dist::zilla 
+
+----------------------------------------
+version 0.2 at 2013-02-28 02:17:31 +0000
+----------------------------------------
+
+  Change: 8fef2c70517dfe11bd67847e7e103e123692fa0d
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-02-28 15:17:31 +0000
+
+    Checking in changes prior to tagging of version 0.2.
+
+    Changelog diff is: 
+
+  Change: aa52fe13ca9917e03ba199ea9e89b94d0bbaf23c
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-02-28 15:16:50 +0000
+
+    fixed use of wrapper_key -> wrapper 
+
+----------------------------------------
+version 0.1 at 2013-01-07 01:44:40 +0000
+----------------------------------------
+
+  Change: 50f4822e96ef5405c1885620e5a0b22a7029d80c
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-01-07 02:44:40 +0000
+
+    Checking in changes prior to tagging of version 0.1.
+
+    Changelog diff is: 
+
+  Change: dd89edbbd5fbd35d57d45c1cb38d714e29ceb4d7
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-01-07 02:44:29 +0000
+
+    fixed POD coverage 
+
+  Change: bcaf1f05a5948f2498866cb6b4323148ee6c1b49
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-01-07 02:33:16 +0000
+
+    first version 
+
+================
+End of releases.
+================
