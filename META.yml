@@ -6,7 +6,7 @@ build_requires: {}
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.130880'
+generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.130880'
 license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -20,4 +20,4 @@ resources:
   bugtracker: https://github.com/nupfel/WebService-Mandrill/issues
   homepage: https://github.com/nupfel/WebService-Mandrill/wiki
   repository: git://github.com/nupfel/WebService-Mandrill.git
-version: 0.3
+version: 0.4

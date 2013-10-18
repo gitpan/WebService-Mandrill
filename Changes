@@ -1,9 +1,43 @@
 ==================================================
-Changes from 2012-05-02 00:00:00 +0000 to present.
+Changes from 2012-10-18 00:00:00 +0000 to present.
 ==================================================
 
 ----------------------------------------
-version 0.3 at 2013-05-02 16:59:44 +0000
+version 0.4 at 2013-10-18 21:51:50 +0000
+----------------------------------------
+
+  Change: dc8cd6410e61a58a320218b93234cd4ca10bfefc
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-10-19 09:51:30 +0000
+
+    version bump 
+
+  Change: 4038887fda90106b7d1ccfb735f12b3d24fe1720
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-10-19 09:51:11 +0000
+
+    added support for send_template command. fixes #1 
+
+  Change: 098bd68aeb5e9e65783fe6eb710fb6e689e29657
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-05-03 05:24:59 +0000
+
+    fixed initial versioning 
+
+  Change: 207569683be664990ab0fcf2f50b098075cc4bd2
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-05-03 05:01:17 +0000
+
+    fixed module name 
+
+  Change: 9be0c400cdddc65f6db4e21173ff05ceb758286a
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2013-05-03 04:59:59 +0000
+
+    v0.3 
+
+----------------------------------------
+version 0.3 at 2013-05-02 16:54:16 +0000
 ----------------------------------------
 
   Change: a67a64065ba255cdb2155145574d0d689b68d186

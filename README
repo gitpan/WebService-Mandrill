@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution WebService-Mandrill,
-version 0.3:
+version 0.4:
 
   WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
 
