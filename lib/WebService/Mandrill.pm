@@ -5,7 +5,7 @@ use Mouse;
 
 # ABSTRACT: WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
 
-our $VERSION = '0.4'; # VERSION
+our $VERSION = '0.5'; # VERSION
 
 with 'Web::API';
 
@@ -26,7 +26,6 @@ has 'commands' => (
             send_raw => {
                 path      => 'messages/send-raw',
                 mandatory => ['raw_message'],
-                wrapper   => 'message',
             },
             send_template => {
                 path      => 'messages/send-template',
@@ -119,6 +118,7 @@ sub BUILD {
     my ($self) = @_;
 
     $self->user_agent(__PACKAGE__ . ' ' . $WebService::Mandrill::VERSION);
+    $self->strict_ssl(1);
     $self->content_type('application/json');
     $self->default_method('POST');
     $self->extension('json');
@@ -141,7 +141,7 @@ WebService::Mandrill - WebService::Mandrill - an interface to mandrillapp.com's 
 
 =head1 VERSION
 
-version 0.4
+version 0.5
 
 =head1 SYNOPSIS
 

@@ -20,4 +20,4 @@ resources:
   bugtracker: https://github.com/nupfel/WebService-Mandrill/issues
   homepage: https://github.com/nupfel/WebService-Mandrill/wiki
   repository: git://github.com/nupfel/WebService-Mandrill.git
-version: 0.4
+version: 0.5
