@@ -5,7 +5,7 @@ use Mouse;
 
 # ABSTRACT: WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
 
-our $VERSION = '0.5'; # VERSION
+our $VERSION = '0.6'; # VERSION
 
 with 'Web::API';
 
@@ -14,11 +14,16 @@ has 'commands' => (
     is      => 'rw',
     default => sub {
         {
-            ping         => { path => 'users/ping' },
-            ping2        => { path => 'users/ping2' },
+            # ping
+            ping  => { path => 'users/ping' },
+            ping2 => { path => 'users/ping2' },
+
+            # user
             user_info    => { path => 'users/info' },
             user_senders => { path => 'users/senders' },
-            send         => {
+
+            # message commands
+            send => {
                 path      => 'messages/send',
                 mandatory => [ 'subject', 'from_email', 'to' ],
                 wrapper   => 'message',
@@ -36,8 +41,10 @@ has 'commands' => (
                 mandatory => ['raw_message'],
             },
             search => { path => 'messages/search' },
-            tags   => { path => 'tags/list' },
-            tag    => {
+
+            # tags
+            tags => { path => 'tags/list' },
+            tag  => {
                 path      => 'tags/info',
                 mandatory => ['tag'],
             },
@@ -53,11 +60,15 @@ has 'commands' => (
                 path      => 'tags/all-time-series',
                 mandatory => ['tag'],
             },
+
+            # rejects
             rejects       => { path => 'rejects/list' },
             delete_reject => {
                 path      => 'rejects/delete',
                 mandatory => ['email']
             },
+
+            # senders
             senders        => { path => 'senders/list' },
             sender_domains => { path => 'senders/domains' },
             sender         => {
@@ -68,6 +79,8 @@ has 'commands' => (
                 path      => 'senders/time-series',
                 mandatory => ['address'],
             },
+
+            # urls
             urls        => { path => 'urls/list' },
             search_urls => {
                 path      => 'urls/search',
@@ -77,6 +90,8 @@ has 'commands' => (
                 path      => 'urls/time-series',
                 mandatory => ['url'],
             },
+
+            # webhooks
             webhooks => { path => 'webhooks/list' },
             webhook  => {
                 path      => 'webhooks/info',
@@ -94,6 +109,8 @@ has 'commands' => (
                 path      => 'webhooks/delete',
                 mandatory => ['id'],
             },
+
+            # inbounds
             inbound_domains => { path => 'inbound/domains' },
             inbound_routes  => {
                 path      => 'inbound/routes',
@@ -102,6 +119,37 @@ has 'commands' => (
             inbound_raw => {
                 path      => 'inbound/send-raw',
                 mandatory => ['raw_message'],
+            },
+
+            # templates
+            templates    => { path => 'templates/list' },
+            add_template => {
+                path      => 'templates/add',
+                mandatory => ['name'],
+            },
+            get_template => {
+                path      => 'templates/info',
+                mandatory => ['name'],
+            },
+            update_template => {
+                path      => 'templates/update',
+                mandatory => ['name'],
+            },
+            publish_template => {
+                path      => 'templates/publish',
+                mandatory => ['name'],
+            },
+            delete_template => {
+                path      => 'templates/delete',
+                mandatory => ['name'],
+            },
+            time_series_template => {
+                path      => 'templates/time-series',
+                mandatory => ['name'],
+            },
+            render_template => {
+                path      => 'templates/render',
+                mandatory => ['name'],
             },
         };
     },
@@ -135,13 +183,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 WebService::Mandrill - WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
 
 =head1 VERSION
 
-version 0.5
+version 0.6
 
 =head1 SYNOPSIS
 
@@ -228,6 +278,20 @@ Please refer to the API documentation at L<http://mandrillapp.com/api/docs/index
 =head2 inbound_routes
 
 =head2 inbound_raw
+
+=head2 templates
+
+=head2 add_template
+
+=head2 get_template
+
+=head2 update_template
+
+=head2 publish_template
+
+=head2 delete_template
+
+=head2 render_template
 
 =head1 INTERNALS
 
