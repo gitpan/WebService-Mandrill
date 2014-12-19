@@ -5,7 +5,7 @@ use Mouse;
 
 # ABSTRACT: WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
 
-our $VERSION = '0.7'; # VERSION
+our $VERSION = '0.8'; # VERSION
 
 with 'Web::API';
 
@@ -39,7 +39,16 @@ has 'commands' => (
                 path      => 'messages/parse',
                 mandatory => ['raw_message'],
             },
-            search => { path => 'messages/search' },
+            search           => { path => 'messages/search' },
+            list_scheduled   => { path => 'messages/list-scheduled' },
+            cancel_scheduled => {
+                path      => 'messages/cancel-scheduled',
+                mandatory => ['id'],
+            },
+            reschedule => {
+                path      => 'messages/reschedule',
+                mandatory => [ 'id', 'send_at' ],
+            },
 
             # tags
             tags => { path => 'tags/list' },
@@ -150,6 +159,16 @@ has 'commands' => (
                 path      => 'templates/render',
                 mandatory => ['name'],
             },
+
+            # exports
+            exports    => { path => 'exports/list' },
+            get_export => {
+                path      => 'exports/info',
+                mandatory => ['id'],
+            },
+            export_rejects   => { path => 'exports/rejects' },
+            export_whitelist => { path => 'exports/whitelist' },
+            export_activity  => { path => 'exports/activity' },
         };
     },
 );
@@ -191,7 +210,7 @@ WebService::Mandrill - WebService::Mandrill - an interface to mandrillapp.com's 
 
 =head1 VERSION
 
-version 0.7
+version 0.8
 
 =head1 SYNOPSIS
 
@@ -228,6 +247,12 @@ Please refer to the API documentation at L<http://mandrillapp.com/api/docs/index
 =head2 send_template
 
 =head2 send_raw
+
+=head2 list_scheduled
+
+=head2 cancel_scheduled
+
+=head2 reschedule
 
 =head2 parse
 
@@ -290,6 +315,16 @@ Please refer to the API documentation at L<http://mandrillapp.com/api/docs/index
 =head2 delete_template
 
 =head2 render_template
+
+=head2 exports
+
+=head2 get_export
+
+=head2 export_rejects
+
+=head2 export_whitelist
+
+=head2 export_activity
 
 =head1 INTERNALS
 
