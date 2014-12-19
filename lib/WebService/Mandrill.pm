@@ -1,11 +1,11 @@
 package WebService::Mandrill;
 
-use 5.010;
+use Modern::Perl;
 use Mouse;
 
 # ABSTRACT: WebService::Mandrill - an interface to mandrillapp.com's RESTful Web API using Web::API
 
-our $VERSION = '0.6'; # VERSION
+our $VERSION = '0.7'; # VERSION
 
 with 'Web::API';
 
@@ -15,8 +15,7 @@ has 'commands' => (
     default => sub {
         {
             # ping
-            ping  => { path => 'users/ping' },
-            ping2 => { path => 'users/ping2' },
+            ping => { path => 'users/ping2' },
 
             # user
             user_info    => { path => 'users/info' },
@@ -172,6 +171,7 @@ sub BUILD {
     $self->extension('json');
     $self->base_url('https://mandrillapp.com/api/1.0');
     $self->auth_type('hash_key');
+    $self->error_keys(['message']);
 
     return $self;
 }
@@ -191,7 +191,7 @@ WebService::Mandrill - WebService::Mandrill - an interface to mandrillapp.com's 
 
 =head1 VERSION
 
-version 0.6
+version 0.7
 
 =head1 SYNOPSIS
 
@@ -218,8 +218,6 @@ Please refer to the API documentation at L<http://mandrillapp.com/api/docs/index
 =head1 SUBROUTINES/METHODS
 
 =head2 ping
-
-=head2 ping2
 
 =head2 user_info
 

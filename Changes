@@ -1,9 +1,38 @@
 ==================================================
-Changes from 2013-05-22 00:00:00 +0000 to present.
+Changes from 2013-12-19 00:00:00 +0000 to present.
 ==================================================
 
 ----------------------------------------
-version 0.6 at 2014-05-22 03:42:24 +0000
+version 0.7 at 2014-12-19 01:18:20 +0000
+----------------------------------------
+
+  Change: ab731ea92ccaaff63fa46b3b503ad828d2395450
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2014-12-18 23:54:07 +0000
+
+    version bump 
+
+  Change: 87864d72b78794da44f7b1d2f296dad4edeb5482
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2014-12-18 23:54:00 +0000
+
+    make use of error keys feature in Web::API 2.2 
+
+  Change: 27bebc50687c9af92328623f84a44fe5ec27a321
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2014-12-18 23:53:32 +0000
+
+    removed old ping command because it does not return JSON and violates
+    the content type header 
+
+  Change: b7c7d690d7297c65ac0004189117da21855ff6b6
+  Author: Tobias Kirschstein <lev@ideegeo.com>
+  Date : 2014-12-18 23:48:39 +0000
+
+    use Modern::Perl instead of 5.10 
+
+----------------------------------------
+version 0.6 at 2014-05-22 03:39:49 +0000
 ----------------------------------------
 
   Change: 645abd0df549675a601e44c30a2ec2be75a0ca5d
@@ -21,72 +50,6 @@ version 0.6 at 2014-05-22 03:42:24 +0000
 
     Update README.pod with new methods 
 
-----------------------------------------
-version 0.5 at 2013-10-30 11:30:36 +0000
-----------------------------------------
-
-  Change: ee2dce28c8be4847a0189b197be4ac42fbdc6661
-  Author: Tobias Kirschstein <lev@ideegeo.com>
-  Date : 2013-10-31 00:30:36 +0000
-
-    version bump 
-
-  Change: f67ef887cac4a1afcd2ff4d951dbbe3fb7da29b8
-  Author: Tobias Kirschstein <lev@ideegeo.com>
-  Date : 2013-10-31 00:30:36 +0000
-
-    enabled strict SSL checking 
-
-  Change: 6c4791b64e4c7aabf428d07d10c1f9c2a734dd5c
-  Author: Tobias Kirschstein <lev@cpan.org>
-  Date : 2013-10-30 04:24:45 +0000
-
-    Merge pull request #3 from akarelas/patch-1
-
-    Fix send_raw 
-
-  Change: 204261fbbbf082660d3c48833ee160224768295d
-  Author: Alexander Karelas <alex.karelas@gmail.com>
-  Date : 2013-10-30 08:29:40 +0000
-
-    Fix send_raw
-
-    send_raw doesn't work without this fix 
-
-----------------------------------------
-version 0.4 at 2013-10-18 21:51:30 +0000
-----------------------------------------
-
-  Change: dc8cd6410e61a58a320218b93234cd4ca10bfefc
-  Author: Tobias Kirschstein <lev@ideegeo.com>
-  Date : 2013-10-19 09:51:30 +0000
-
-    version bump 
-
-  Change: 4038887fda90106b7d1ccfb735f12b3d24fe1720
-  Author: Tobias Kirschstein <lev@ideegeo.com>
-  Date : 2013-10-19 09:51:11 +0000
-
-    added support for send_template command. fixes #1 
-
-  Change: 098bd68aeb5e9e65783fe6eb710fb6e689e29657
-  Author: Tobias Kirschstein <lev@ideegeo.com>
-  Date : 2013-05-03 05:24:59 +0000
-
-    fixed initial versioning 
-
-  Change: 207569683be664990ab0fcf2f50b098075cc4bd2
-  Author: Tobias Kirschstein <lev@ideegeo.com>
-  Date : 2013-05-03 05:01:17 +0000
-
-    fixed module name 
-
-  Change: 9be0c400cdddc65f6db4e21173ff05ceb758286a
-  Author: Tobias Kirschstein <lev@ideegeo.com>
-  Date : 2013-05-03 04:59:59 +0000
-
-    v0.3 
-
 ================================================
-Plus 3 releases after 2013-05-22 00:00:00 +0000.
+Plus 5 releases after 2013-12-19 00:00:00 +0000.
 ================================================
